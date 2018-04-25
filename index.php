@@ -6,6 +6,9 @@
     <br>
     <h1>OnlineRetail</h1>
   </div>
+
+  <?php require "navbar.php" ?>
+
   <div id="featured-items">
     <div class="indiv-item">
       <img class="product-img" src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05509300.png" alt="">

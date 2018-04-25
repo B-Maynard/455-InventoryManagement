@@ -2,6 +2,22 @@ body {
   background-color: #f2f2f2;
 }
 
+#nav {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+}
+
+.navBox {
+  border: 1px solid white;
+  float: left;
+  height: 100%;
+  width: 25%;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+}
+
 #logo {
   height: 150px;
   width: 150px;
@@ -23,6 +39,7 @@ body {
   border: 1px solid black;
   padding: 2%;
   margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 .indiv-item {
