@@ -7,7 +7,7 @@
   $connection = getConnection();
   //pbe. if any of them fail, spit out the error message
   if (!$stmt = $connection->prepare(
-    "SELECT itemName, itemDescription, itemPrice, itemImg FROM items"
+    "SELECT id, itemName, itemDescription, itemPrice, itemImg FROM items"
   )) {
     die("Prepare error: " . $connection->error);
   }
@@ -28,13 +28,6 @@
 
 <?php require "header.php" ?>
 
-<body>
-  <div id="top">
-    <img id="logo" src="https://www.graphicsprings.com/filestorage/stencils/fef1c295c28fa66259d253156c63a459.svg" alt="logo">
-    <br>
-    <h1>OnlineRetail</h1>
-  </div>
-
   <?php require "navbar.php" ?>
 
   <div id="featured-items">
@@ -42,7 +35,7 @@
     <?php foreach($items as $item) { ?>
     <div class="indiv-item">
       <!-- use the img tag from the database in the html -->
-      <img class="product-img" src="<?php echo $item['itemImg'] ?>" alt="">
+      <a href="indiv-item.php?id=<?php echo $item['id'] ?>"><img class="product-img" src="<?php echo $item['itemImg'] ?>" alt=""></a>
       <!-- same for item name and price -->
       <h4><?php echo $item['itemName'] ?></h4>
       <h5>$<?php echo $item['itemPrice'] ?></h5>

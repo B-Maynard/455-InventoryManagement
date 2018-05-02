@@ -17,3 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OnlineRetail</title>
   </head>
+  <body>
+    <div id="top">
+      <img id="logo" src="https://www.graphicsprings.com/filestorage/stencils/fef1c295c28fa66259d253156c63a459.svg" alt="logo">
+      <br>
+      <h1>OnlineRetail</h1>
+    </div>
