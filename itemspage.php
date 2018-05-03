@@ -25,30 +25,32 @@
 
 ?>
 
-
 <?php require "header.php" ?>
+<?php require "navbar.php" ?>
 
-  <?php require "navbar.php" ?>
+<?php
+  if (isset($_SESSION['user_id'])) {
+    if ($_SESSION['user_id'] === 999)
+?>
 
-  <div id="featured-items">
-    <!-- php for loop to gather all items in the data base -->
-    <?php $i=0; ?>
-    <?php foreach($items as $item) { ?>
-    <div class="indiv-item">
-      <!-- use the img tag from the database in the html -->
-      <a href="indiv-item.php?id=<?php echo $item['id'] ?>"><img class="product-img" src="<?php echo $item['itemImg'] ?>" alt=""></a>
-      <!-- same for item name and price -->
-      <h4><?php echo $item['itemName'] ?></h4>
-      <h5>$<?php echo $item['itemPrice'] ?></h5>
-    </div>
-    <!-- close the php loop  -->
-    <?php
-      $i++;
-      if ($i==4) break;
-     ?>
-  <?php } ?>
+<h4><a href="additems.php">Add Items</a></h4>
+
+<?php } ?>
+
+<div id="all-items">
+  <!-- php for loop to gather all items in the data base -->
+  <?php foreach($items as $item) { ?>
+  <div class="indiv-item">
+    <!-- use the img tag from the database in the html -->
+    <a href="indiv-item.php?id=<?php echo $item['id'] ?>"><img class="product-img" src="<?php echo $item['itemImg'] ?>" alt=""></a>
+    <!-- same for item name and price -->
+    <h4><?php echo $item['itemName'] ?></h4>
+    <h5>$<?php echo $item['itemPrice'] ?></h5>
   </div>
-  <div id="bottom">
-  </div>
+  <!-- close the php loop  -->
+<?php } ?>
+</div>
+<div id="bottom">
+</div>
 
 <?php require "footer.php" ?>

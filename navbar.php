@@ -14,7 +14,7 @@
 
 <div id="nav">
   <div class="navBox" id="box1"><a href="index.php">Home</a></div>
-  <div class="navBox" id="box2">Items</div>
+  <div class="navBox" id="box2"><a href="itemspage.php">Items</a></div>
   <div class="navBox" id="box3">Transactions</div>
   <div class="navBox" id="box4"><a href="<?php echo $sessionPage ?>"><?php echo $sessionPageLink ?></a></div>
 </div>

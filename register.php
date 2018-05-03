@@ -52,6 +52,7 @@
  ?>
 
  <?php require "header.php" ?>
+ <?php require "navbar.php" ?>
 
  <h2 class="register-header">Register Your Account</h2>
 <hr>

@@ -122,3 +122,15 @@ footer > p {
   box-shadow: 0 0 5px black;
   padding: 3px;
 }
+
+/* Items page */
+
+#all-items {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 1px solid black;
+  padding: 2%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
