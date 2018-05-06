@@ -5,7 +5,7 @@ function getConnection() {
   $connection = new mysqli(
     "localhost:3306", //host
     "root", //username
-    "", //password
+    "root", //password
     "455-final" //database
   );
 
