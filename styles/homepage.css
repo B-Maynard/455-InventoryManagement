@@ -39,11 +39,12 @@ body {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  height: 300px;
+  height: 100%;
   border: 1px solid black;
   padding: 2%;
   margin-bottom: 5%;
   margin-top: 5%;
+  overflow: hidden;
 }
 
 .indiv-item {
@@ -80,7 +81,6 @@ footer > p {
   margin-bottom: 3%;
   margin-top: 3%;
   padding: 20px;
-
 }
 
 #left-side-item {
@@ -133,4 +133,6 @@ footer > p {
   padding: 2%;
   margin-bottom: 5%;
   margin-top: 5%;
+  height: 100%;
+  overflow: hidden;
 }

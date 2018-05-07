@@ -28,14 +28,6 @@
 <?php require "header.php" ?>
 <?php require "navbar.php" ?>
 
-<?php
-  if (isset($_SESSION['user_id'])) {
-    if ($_SESSION['user_id'] === 999)
-?>
-
-<h4><a href="additems.php">Add Items</a></h4>
-
-<?php } ?>
 
 <div id="all-items">
   <!-- php for loop to gather all items in the data base -->
