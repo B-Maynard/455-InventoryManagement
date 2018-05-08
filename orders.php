@@ -17,22 +17,24 @@
 
   //use current session id as the customer id in orders table
   $userid = $_SESSION['user_id'];
+  $date = date("Y-m-d");
 
 
   $connection = getConnection();
 
   if (!$stmt = $connection->prepare(
-    "INSERT INTO orders(itemId, itemPrice, userId)
-    VALUES (?, ?, ?)
+    "INSERT INTO orders(itemId, itemPrice, userId, date)
+    VALUES (?, ?, ?, ?)
   ")) {
     die ("Prepare error: " . $connection->error);
   }
 
   if (!$stmt->bind_param(
-    "iii",
+    "iiis",
     $_GET['id'],
     $_GET['price'],
-    $userid
+    $userid,
+    $date
   )) {
     die("Bind failed: " . $connection->error);
   }

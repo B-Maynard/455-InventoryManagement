@@ -7,7 +7,7 @@
   $connection = getConnection();
   //pbe. if any of them fail, spit out the error message
   if (!$stmt = $connection->prepare(
-    "SELECT id, itemName, itemDescription, itemPrice, itemImg FROM items"
+    "SELECT * FROM items"
   )) {
     die("Prepare error: " . $connection->error);
   }
@@ -30,6 +30,7 @@
 
   <?php require "navbar.php" ?>
 
+<h2>Most Popular</h2>
   <div id="featured-items">
     <!-- php for loop to gather all items in the data base -->
     <?php $i=0; ?>
@@ -40,6 +41,7 @@
       <!-- same for item name and price -->
       <h4><?php echo $item['itemName'] ?></h4>
       <h5>$<?php echo $item['itemPrice'] ?></h5>
+      <h5>Quantity: <?php echo $item['quantity'] ?></h5>
     </div>
     <!-- close the php loop  -->
     <?php
