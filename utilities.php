@@ -1,17 +1,17 @@
 <?php
 
-function getConnection() {
-  //using local database for now, plan to change to hosted database
-  $connection = new mysqli(
-    "localhost:3306", //host
-    "root", //username
-    "", //password
-    "455-final" //database
-  );
+function getConnection()
+  {
+    $host = "project.jcheung.net";
+    $user = "root";
+    $password = "455Fredonia!";
+    $db = "455final";
+    $connection = new mysqli($host, $user, $password, $db);
 
-  if ($connection->connect_error) {
-    die("Could not connect: " . $connection->connect_error);
+    if($connection -> connect_error) {
+      header("Location: errorpage.php");
+    }
+
+    //Sent the connection back
+    return $connection;
   }
-
-  return $connection;
-}
