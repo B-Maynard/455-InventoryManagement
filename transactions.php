@@ -19,17 +19,19 @@
   $userid = $_SESSION['user_id'];
 
 
+
   $connection = getConnection();
 
   if (!$stmt = $connection->prepare(
-    "SELECT * FROM orders WHERE userId = ?"
+    "SELECT * FROM orders WHERE userId = ? AND date >= ?"
   )) {
     die ("Prepare error: " . $connection->error);
   }
 
   if (!$stmt->bind_param(
-    "i",
-    $userid
+    "is",
+    $userid,
+    $_GET['dateCheck']
   )) {
     die("Bind failed: " . $connection->error);
   }
@@ -44,10 +46,15 @@
     $orders[] = $row;
   }
 
+
+
+
  ?>
 
  <?php require "header.php" ?>
  <?php require "navbar.php" ?>
+
+
 
  <table class="edit-table">
    <thead>
@@ -69,7 +76,7 @@
            <td><?php echo $order['itemPrice'] ?></td>
            <td><?php echo $order['userId'] ?></td>
            <td><?php echo $order['date'] ?></td>
-           <td><a  id="return-button" href="return.php?orderId=<?php $order['orderId'] ?>&itemId=<?php $order['itemId'] ?>">Return</a></td>
+           <td><a  id="return-button" href="return.php?orderId=<?php echo $order['orderId'] ?>&itemId=<?php echo $order['itemId'] ?>">Return</a></td>
          </tr>
        <?php } ?>
      </tbody>

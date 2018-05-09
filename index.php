@@ -7,7 +7,7 @@
   $connection = getConnection();
   //pbe. if any of them fail, spit out the error message
   if (!$stmt = $connection->prepare(
-    "SELECT * FROM items"
+    "SELECT * FROM items ORDER BY quantity ASC"
   )) {
     die("Prepare error: " . $connection->error);
   }
